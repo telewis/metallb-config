@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config
+  namespace: metallb-system
+data:
+  config: |
+    address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      - 192.168.1.82-192.168.1.99
+    - name: ingress
+      protocol: layer2
+      addresses:
+      - 192.168.1.80-192.168.1.81
